@@ -1,0 +1,66 @@
+/* reset */
+html,body,div,input,button,h1{
+	margin:0;
+	padding:0;
+}
+input,button{
+	border:none;
+	outline:none;
+}
+body *{
+	box-sizing: border-box;
+}
+body{
+	min-width:400px;
+	min-height: 500px;
+}
+.calculator{
+	width:350px;
+	height:450px;
+	text-align: center;
+	border:1px solid #ccc;
+	background: rgba(0,0,255,0.2);
+	position:absolute;
+	top:50%;
+	left:50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	-webkit-border-radius:15px;
+	-moz-border-radius:15px;
+	border-radius:15px;
+}
+h1{
+	font-family: 'Oleo Script', cursive;
+  	margin-top: 10px;
+	color:rgba(0,180,180,0.4);
+}
+.text{
+	height:35px;
+	line-height: 35px;
+	width:316px;
+	margin:10px auto;
+	background: rgba(255,255,255,0.4);
+	text-align: right;
+	font-size:14px;
+	padding-right:10px;
+}
+.btn-group{
+	width:316px;
+	margin:10px auto;
+}
+.button{
+	font-size:14px;
+	width:75px;
+	height:58px;
+	float:left;
+	margin:2px;
+	background:rgba(255,255,255,.4);
+	cursor:pointer;
+	-webkit-transition:background .5s ease-in-out;
+	-moz-transition:background .5s ease-in-out;
+	transition:background .5s ease-in-out;
+}
+.button:hover{
+	background:rgba(255,255,255,.7);
+}
