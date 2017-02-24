@@ -1,0 +1,191 @@
+/* 重置CSS样式 */
+html{
+	box-sizing: border-box;
+}
+*,*::before,*::after{
+	box-sizing: border-box;
+}
+body,div,img,p,h1,h2,h3,h4,h5,h6,pre,ul,li,form,a,input{
+	margin:0;
+	padding: 0;
+	border:0;
+	outline: none;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #092B40;
+	padding:20px;
+}
+/* 让元素高度同浏览器页面高度 */
+html,body{
+	height:100%;
+}
+.content{
+	height:100%;
+	padding-top:10px;
+}
+.fullHeight{
+	height:100%;
+}
+/* flex布局兼容写法 */
+.wrapper{
+	width:100%;
+	margin:20px 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display:-ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	/* 显示方向：垂直 */
+	-webkit-box-direction:normal;
+	-webkit-box-orient:vertical;
+	-moz-flex-direction:column;
+	-webkit-flex-direction:column;
+	flex-direction: column;
+	/* 子元素主轴对齐方式 */
+	-webkit-box-pack:center;
+	-moz-justify-content:center;
+	-webkit-justify-content:center;
+	justify-content: center;
+	/* 子元素交叉轴对齐方式 */
+	-webkit-box-align:center;
+	-moz-align-items:center;
+	-webkit-align-items:center;
+	align-items: center;
+}
+#search a,#search p{
+	color:#fff;
+}
+#search a:hover{
+	color:#D96F32;
+}
+form{
+	position: relative;
+	height:32px;
+	width:32px;
+	margin:10px 0 20px 0;
+	/* set border-radius */
+	-webkit-border-radius:16px;
+	-moz-border-radius:16px;
+	border-radius: 16px;
+	/* set box-shadow */
+	-webkit-box-shadow: 0 0 0 4px #D96F32;
+	-moz-box-shadow: 0 0 0 4px #D96F32;
+	box-shadow: 0 0 0 4px #D96F32;
+	/* set transition */
+	-moz-transition:width .25s ease .3s;
+	-webkit-transition:width .25s ease .3s;
+	transition:width .25s ease .3s;
+}
+form.open{
+	width:260px;
+	-moz-transition-delay:.1s;
+	-webkit-transition-delay:.1s;
+	transition-delay:.1s;
+}
+form::before{
+	content:"";
+	position:absolute;
+	display: block;
+	width:20px;
+	height:4px;
+	background:#D96F32;
+	top:100%;
+	left:75%;
+	/* set transform */
+	-moz-transform:rotate(45deg);
+	-webkit-transform:rotate(45deg);
+	transform:rotate(45deg);
+	/* set border-radius */
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	/* set transition */
+	-moz-transition:width .2s ease .55s;
+	-webkit-transition:width .2s ease .55s;
+	transition:width .2s ease .55s;
+}
+form.open::before{
+	width:0;
+	/* set transition-delay */
+	-moz-transition-delay:.1s;
+	-webkit-transition-delay:.1s;
+	transition-delay:.1s;
+}
+form input{
+	height:32px;
+	width:100%;
+	color:#fff;
+	padding:0 30px 0 10px;
+	background: transparent;
+	cursor:pointer;
+}
+/* 关闭按钮的样式 */
+.closed{
+	position:absolute;
+	top:50%;
+	right:0;
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	-moz-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	overflow:hidden;
+	z-index: 20;
+}
+.closed::before,.closed::after{
+	content:"";
+	display: block;
+	position: absolute;
+	right:5px;
+	width:20px;
+	height:2px;
+	background: #D96F32;
+	-moz-transition:all .3s ease .2s;
+	-webkit-transition:all .3s ease .2s;
+	transition:all .3s ease .2s;
+}
+.closed::before{
+	top:40px;
+	transform: rotate(45deg);
+}
+.closed::after{
+	top:-10px;
+	transform: rotate(-45deg);
+}
+form.open .closed::before,form.open .closed::after{
+	top:14px;
+	-moz-transition-delay:.3s;
+	-webkit-transition-delay:.3s;
+	transition-delay:.3s;
+}
+form.open .closed:hover{
+	cursor:pointer;
+}
+
+#result ul{
+	width:80%;
+}
+#result a{
+	display: block;
+	margin-bottom:15px;
+	cursor:pointer;
+	background: #E7E7E8;
+	color:#333;
+}
+#result li{
+	padding:20px;
+}
+#result li:hover{
+	border-left:5px solid #D96F32;
+	margin-left:-5px;
+}
+#result a h4{
+	margin-bottom:20px;
+}
