@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>诗经随机生成器</title>
+	<style type="text/css">
+	body{
+		-moz-transition: background 1.5s;
+		-webkit-transition: background 1.5s;
+		transition: background 1.5s;
+	}
+	/* iconfont——fontface */
+	@font-face {
+  		font-family: 'iconfont';  /* project id："185025" */
+  		src: url('http://at.alicdn.com/t/font_vurhct5nhi8p8pvi.eot');
+  		src: url('http://at.alicdn.com/t/font_vurhct5nhi8p8pvi.eot?#iefix') format('embedded-opentype'),
+  		url('http://at.alicdn.com/t/font_vurhct5nhi8p8pvi.woff') format('woff'),
+  		url('http://at.alicdn.com/t/font_vurhct5nhi8p8pvi.ttf') format('truetype'),
+  		url('http://at.alicdn.com/t/font_vurhct5nhi8p8pvi.svg#iconfont') format('svg');
+	}
+	a{
+		text-decoration: none;
+	}
+	.iconfont{
+		font-family: "iconfont";
+		font-size:24px;
+		font-style:normal;
+		color:#fff;
+		padding:6px 8px;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		float:left;
+		margin-left:10px;
+		transition:background 1.5s;
+	}
+	/* wrap */
+	/* 清除浮动 */
+	.clearfix {
+ 		overflow: auto;
+  		zoom: 1;
+	}
+	.wrap{
+		width:400px;
+		margin:100px auto;
+		padding:30px;
+		background: #fff;
+		font-size:20px;
+		/* 圆角 */
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+	}
+	.wrap .content{
+		margin-bottom:20px;
+	}
+	.wrap #quote-title,.wrap button#change{
+		float:right;
+	}
+	.wrap button#change{
+		color:#fff;
+		font-weight:bold;
+		border:none;
+		padding:8px 20px;
+		/* 圆角 */
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		/* 背景颜色过渡，由js触发 */
+		-moz-transition:background 1.5s;
+		-webkit-transition:background 1.5s;
+		transition:background 1.5s;
+	}
+	/* 鼠标滑过按钮的样式 */
+	.wrap button#change:hover,.iconfont:hover{
+		opacity: 0.7;
+		filter: alpha(opacity=70);
+		cursor:pointer;
+	}
+	</style>
+</head>
+<body>
+	<div class="wrap clearfix">
+		<div class="content clearfix">
+			<p id="quote-content">
+				关关雎鸠，在河之洲。窈窕淑女，君子好逑。
+			</p>
+			<p id="quote-title">
+				——《关雎》
+			</p>
+		</div>
+		<a class="iconfont" href="#">&#xe6a1;</a>
+		<a class="iconfont" href="#">&#xe6a0;</a>
+		<button id="change">更换内容</button>
+	</div>
+	<script type="text/javascript">
+		var data=[{"content":"葛之覃兮，施于中谷，维叶萋萋。黄鸟于飞，集于灌木，其鸣喈喈。","title":"——《葛覃》"},
+				  {"content":"于以采蘋？南涧之滨。于以采藻？于彼行潦。","title":"——《采蘋》"},
+				  {"content":"静女其姝，俟我于城隅。爱而不见，搔首踟蹰。","title":"——《静女》"},
+				  {"content":"式微，式微，胡不归？微君之故，胡为乎中露！式微，式微，胡不归？微君之躬，胡为乎泥中！","title":"——《式微》"},
+				  {"content":"有狐绥绥，在彼淇梁。心之忧矣，之子无裳。有狐绥绥，在彼淇厉。心之忧矣，之子无带。","title":"——《有狐》"},
+				  {"content":"投我以木瓜，报之以琼琚。匪报也，永以为好也！投我以木桃，报之以琼瑶。匪报也，永以为好也！","title":"——《木瓜》"},
+				  {"content":"桃之夭夭，灼灼其华。之子于归，宜其室家。桃之夭夭，有蕡其实。之子于归，宜其家室。桃之夭夭，其叶蓁蓁。之子于归，宜其家人。","title":"——《桃夭》"},
+				  {"content":"瞻彼淇奥，绿竹猗猗。有匪君子，如切如磋，如琢如磨。瑟兮僩兮，赫兮咺兮。有匪君子，终不可谖兮。","title":"——《淇奥》"},
+				  {"content":"彼黍离离，彼稷之苗。行迈靡靡，中心摇摇。知我者，谓我心忧；不知我者，谓我何求。悠悠苍天，此何人哉？","title":"——《黍离》"},
+				  {"content":"彼采葛兮，一日不见，如三月兮！彼采萧兮，一日不见，如三秋兮！彼采艾兮！一日不见，如三岁兮！","title":"——《采葛》"},
+				  {"content":"青青子衿，悠悠我心。纵我不往，子宁不嗣音？","title":"——《子衿》"},
+				  {"content":"出其东门，有女如云。虽则如云，匪我思存。缟衣綦巾，聊乐我员。","title":"——《出其东门》"},
+				  {"content":"采苓采苓，首阳之巅。人之为言，苟亦无信。舍旃舍旃，苟亦无然。人之为言，胡得焉？","title":"——《采苓》"},
+				  {"content":"蜉蝣之羽，衣裳楚楚。心之忧矣，于我归处。蜉蝣之翼，采采衣服。心之忧矣，于我归息。蜉蝣掘阅，麻衣如雪。心之忧矣，于我归说。","title":"——《蜉蝣》"},
+				  {"content":"呦呦鹿鸣，食野之苹。我有嘉宾，鼓瑟吹笙。吹笙鼓簧，承筐是将。人之好我，示我周行。","title":"——《鹿鸣》"},
+				  {"content":"采薇采薇，薇亦作止。曰归曰归，岁亦莫止。 靡室靡家，猃狁之故。不遑启居，猃狁之故。","title":"——《采薇》"},
+				  {"content":"鸿雁于飞，肃肃其羽。之子于征，劬劳于野。爰及矜人，哀此鳏寡。","title":"——《鸿雁》"},
+				  {"content":"我行其野，蔽芾其樗。婚姻之故，言就尔居。尔不我畜，复我邦家。","title":"——《我行其野》"},
+				  {"content":"芃芃黍苗，阴雨膏之。悠悠南行，召伯劳之。我任我辇，我车我牛。我行既集，盖云归哉。我徒我御，我师我旅。我行既集，盖云归处。","title":"——《黍苗》"},
+				  {"content":"方命厥后，奄有九有。商之先后，受命不殆，在武丁孙子。武丁孙子，武王靡不胜。","title":"——《玄鸟》"},
+				  {"content":"瞻彼中林，甡甡其鹿。朋友已谮，不胥以谷。人亦有言：进退维谷。","title":"——《桑柔》"},
+		];
+		/*事件监听*/
+		function addEvent(element,type,handler){
+			if(element.addEventListener){
+				element.addEventListener(type,handler,false);
+			}else if(element.attachEvent){
+				element.attachEvent("on"+type,handler);
+			}else{
+				element["on"+type]=handler;
+			}
+		}
+		/*判断给定元素是否有某个类*/
+		function hasClass(element,cls){
+			return element.className.match(new RegExp("(\\s|^)"+cls+"($|\\s)"));
+		}
+		/*通过类名获取元素*/
+		function getByClass(parent,cls){
+			parent=parent?parent:document;
+			var elements=parent.getElementsByTagName("*"),
+				result=[];
+			for(var i=0;i<elements.length;i++){
+				if(hasClass(elements[i],cls)){
+					result.push(elements[i]);
+				}
+			}
+			return result;
+		}
+		/*随机产生颜色*/
+		function randomColor(){
+			var red=Math.floor(Math.random()*255),
+				green=Math.floor(Math.random()*255),
+				blue=Math.floor(Math.random()*255),
+				_rgb="rgb("+red+","+green+","+blue+")";
+			return _rgb;
+		}
+		/*随机名言生成*/
+		function createQuote(wrap,_rgb){
+			/*获得随机诗经语句*/
+			var quote_content=document.getElementById("quote-content"),
+				quote_title=document.getElementById("quote-title"),
+				content=getByClass(wrap,"content")[0],
+				index=Math.floor(Math.random()*data.length),
+				iconfont=getByClass(wrap,"iconfont");
+			quote_content.innerHTML=data[index].content;
+			quote_title.innerHTML=data[index].title;
+			/*改变背景颜色与字体颜色*/
+			document.getElementsByTagName("body")[0].style.background=_rgb;
+			document.getElementById("change").style.background=_rgb;
+			content.style.color=_rgb;
+			console.log(content.style.opacity);
+			for(var i=0;i<iconfont.length;i++){
+				iconfont[i].style.background=_rgb;
+			}
+		}
+		window.onload=function(){
+			var _body=document.getElementsByTagName("body")[0],
+				wrap=getByClass(_body,"wrap")[0],
+				button=document.getElementById("change"),
+				rgba=randomColor();
+			createQuote(wrap,rgba);
+			addEvent(button,"click",function(){
+				var _rgb=randomColor();
+				createQuote(wrap,_rgb);
+			});
+		}
+	</script>
+</body>
+</html>
