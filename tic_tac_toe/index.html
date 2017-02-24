@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>井字棋</title>
+	<link rel="stylesheet" type="text/css" href="../bootstrap.min.css">
+	<style type="text/css">
+		.modal{
+			margin-top: 80px;
+			-webkit-border-radius:10px;
+			-moz-border-radius:10px;
+			border-radius:10px;
+		}
+		@media(min-width:768px) {
+			.modal-dialog{
+				width:550px;
+			}
+		}
+		.modal-header{
+			margin:20px 20px 0 20px;
+			padding:20px;
+			text-align: center;
+		}
+		.modal-body{
+			margin:0 20px 0 20px;
+			text-align: center;
+			font-size:18px;
+		}
+		.modal-footer{
+			margin:0 20px 20px 0;
+		}
+		.modal-header,.modal-body{
+			background: #000;
+			color:#fff;
+		}
+		#chessBoard{
+			position: absolute;
+			top:50%;
+			left:50%;
+			-moz-transform:translate(-50%,-50%);
+			-webkit-transform:translate(-50%,-50%);
+			transform:translate(-50%,-50%);
+			background: #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title">tictactoe.js</h4>
+				</div>
+				<div class="modal-body">
+					<p>X or O?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default">X</button>
+					<button type="button" class="btn btn-default">O</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<canvas id="chessBoard" width="420" height="420"></canvas>
+	<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../bootstrap.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
