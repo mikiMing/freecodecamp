@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示本地的天气</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header class="clearfix">
+	<img src="images/logo1.png" alt="logo" />
+	<h1>Miki天气</h1>
+	</header><!-- header结束 -->
+	<div class="city_header wrap">
+		<ul>
+			<li class="li_border">天气</li>
+			<li class="iconfont">&#xe615;</li>
+			<li class="li_border">中国</li>
+			<li class="iconfont">&#xe615;</li>
+			<li class="li_border city"></li>
+		</ul>
+	</div><!-- wrap header结束 -->
+	<div class="city_search wrap clearfix">
+		<span class="iconfont">&#xe60f;</span>
+		<p><span class="city"></span>，<span>中国</span></p>
+		<span class="iconfont" id="search_btn">&#xe714;</span>
+		<input type="text" placeholder="请输入你要查询的城市" />
+		<span class="iconfont" id="search_close">&#xe652;</span>
+	</div><!-- city_search结束 -->
+	<div class="wea_info wrap">
+		<div class="wea_air">
+			<span class="iconfont" id="leaves">&#xe613;</span>
+			<span id="quality">19 优</span>
+		</div><!-- wea_air结束 -->
+		<div class="wea_weather">
+			<em></em>
+			<span><img src="" alt="" /></span>
+			<b></b>
+		</div><!-- wea_weather结束 -->
+		<div class="wea_about">
+			<span class="iconfont">&#xe95c;</span>
+			<em id="humidity"></em>
+			<span class="iconfont">&#xe63d;</span>
+			<em id="wind"></em>
+		</div>
+	</div><!-- wea_info结束 -->
+	<div class="future_wea wrap">
+		<ul>
+			<li class="active">
+				<span class="week"></span>
+				<span class="date"></span>
+				<span><img src="images/00.png" alt="" class="weaImg"></span>
+				<span><em class="weaTem"></em>℃</span>
+				<span class="wea"></span>
+				<span class="weaWind"></span>
+			</li>
+			<li>
+				<span class="week"></span>
+				<span class="date"></span>
+				<span><img src="images/00.png" alt="" class="weaImg"></span>
+				<span><em class="weaTem"></em>℃</span>
+				<span class="wea"></span>
+				<span class="weaWind"></span>
+			</li>
+			<li>
+				<span class="week"></span>
+				<span class="date"></span>
+				<span><img src="images/00.png" alt="" class="weaImg"></span>
+				<span><em class="weaTem"></em>℃</span>
+				<span class="wea"></span>
+				<span class="weaWind"></span>
+			</li>
+			<li>
+				<span class="week"></span>
+				<span class="date"></span>
+				<span><img src="images/00.png" alt="" class="weaImg"></span>
+				<span><em class="weaTem"></em>℃</span>
+				<span class="wea"></span>
+				<span class="weaWind"></span>
+			</li>
+			<li>
+				<span class="week"></span>
+				<span class="date"></span>
+				<span><img src="images/00.png" alt="" class="weaImg"></span>
+				<span><em class="weaTem"></em>℃</span>
+				<span class="wea"></span>
+				<span class="weaWind"></span>
+			</li>
+		</ul>
+	</div><!-- future_wea结束 -->
+	<div class="live_index wrap">
+		<div class="live_title">
+			<p>生活指数</p>
+		</div><!-- live_title结束 -->
+		<div class="live_item clearfix">
+			<ul>
+				<li>
+					<img src="images/uv.png" alt="uv" />
+					<p></p>
+				</li>
+				<li>
+					<img src="images/wash.png" alt="wash" />
+					<p></p>
+				</li>
+				<li>
+					<img src="images/dress.png" alt="dress" />
+					<p></p>
+				</li>
+				<li>
+					<img src="images/exercise.png" alt="exercise" />
+					<p></p>
+				</li>
+				<li>
+					<img src="images/hospital.png" alt="hospital" />
+					<p></p>
+				</li>
+				<li>
+					<img src="images/air.png" alt="air" />
+					<p></p>
+				</li>
+			</ul>
+		</div><!-- live_item结束 -->
+	</div><!-- live_index结束 -->
+	<script type="text/javascript" src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

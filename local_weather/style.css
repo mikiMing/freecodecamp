@@ -1,0 +1,194 @@
+/* 重置样式 */
+body,header,div,ul,li,h1,p,input{
+	margin:0;
+	padding:0;
+	font-size:17px;
+}
+ul{
+	list-style:none;
+}
+/* 图标样式 */
+@font-face {
+  font-family: 'iconfont';  /* project id："188902" */
+  src: url('http://at.alicdn.com/t/font_9kifu2h7l79qw7b9.eot');
+  src: url('http://at.alicdn.com/t/font_9kifu2h7l79qw7b9.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_9kifu2h7l79qw7b9.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_9kifu2h7l79qw7b9.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_9kifu2h7l79qw7b9.svg#iconfont') format('svg');
+}
+.iconfont{
+	font-family: "iconfont";
+	font-size:22px;
+	font-style: normal;
+}
+/* 清除浮动 */
+.clearfix:after {
+	display: block;
+	clear:both;
+	content:"";
+	visibility: hidden;
+	height: 0;
+}
+.clearfix{
+	zoom:1;
+}
+/* 页面背景 */
+body{
+	background:url(images/bg.jpg) no-repeat fixed;
+	min-width:1000px;
+}
+/* header样式 */
+header{
+	background: #000;
+	color:#fff;
+	height:70px;
+	line-height: 70px;
+}
+header img,header h1{
+	float:left;
+}
+header img{
+	margin-left:45%
+}
+/* wrap样式 */
+.wrap{
+	width:900px;
+	margin:20px auto;
+	color:#fff;
+}
+/* city_header样式 */
+.city_header li{
+	display:inline-block;
+	margin-right:5px;
+}
+.city_header li.li_border{
+	border:1px solid #666;
+	padding:5px 10px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius: 5px;
+}
+/* city_search样式 */
+.city_search{
+	height:35px;
+}
+.city_search p{
+	width:240px;
+	height:30px;
+	line-height: 30px;
+	font-size:22px;
+	overflow:hidden;
+}
+.city_search .iconfont,.city_search input[placeholder]{
+	color:rgba(255,255,255,.3);
+}
+.city_search .iconfont:first-of-type{
+	color:#EE6342;
+}
+.city_search .iconfont,.city_search p,.city_search input{
+	margin-right:5px;
+}
+.city_search input{
+	width:0;
+	height:30px;
+	font-size: 15px;
+	border:1px solid rgba(255,255,255,0.2);
+	border-width: 0 0 1px 0;
+	outline: 0;
+	background: rgba(0,0,0,0);
+}
+.city_search #search_btn,.city_search #search_close{
+	cursor:pointer;
+}
+.city_search #search_close{
+	display: none;
+}
+.city_search .iconfont,.city_search p,.city_search input{
+	float: left;
+}
+/* wea_info样式 */
+    /* wea_air样式 */
+    .wea_air{
+    	display: inline-block;
+    	padding:8px 15px;
+    	background:rgba(0,0,0,0.7);
+    	-moz-border-radius:20px;
+    	-webkit-border-radius:20px;
+    	border-radius:20px;
+    }
+    .wea_air #leaves{
+    	color:#8FC31F;
+    }
+    /* wea_weather样式 */
+    .wea_weather *{
+    	margin-right:10px;
+    }
+    .wea_weather em{
+    	font-size:100px;
+    	font-style: normal;
+    	padding:0;
+    }
+    .wea_weather b{
+    	font-size:25px;
+    }
+    /* wea_about样式 */
+    .wea_about em{
+    	margin-right:20px;
+    }
+/* future_wea样式 */
+.future_wea{
+	height:300px;
+	background:rgba(60,60,60,0.5);
+}
+.future_wea li{
+	width:180px;
+	height:300px;
+	float:left;
+	overflow: hidden;
+}
+.future_wea li:hover,.future_wea .active{
+	background: rgba(0,0,0,0.3);
+}
+.future_wea li span{
+	display: block;
+	text-align: center;
+	margin:18px 0;
+}
+/* live_index样式 */
+.live_index{
+	background: rgba(60,60,60,0.5);
+}
+.live_title {
+	padding:10px 20px;
+	font-size:20px;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.live_item li{
+	float:left;
+	position: relative;
+	width:279px;
+	height:100px;
+	padding-left:20px;
+	border:1px solid rgba(255,255,255,0.2);
+	border-width:0 1px 1px 0;
+}
+/* 为live_index添加边框 */
+.live_item li:nth-child(3){
+	border-width: 0 0 1px 0;
+}
+.live_item li:nth-child(3)~li{
+	border-width: 0 1px 0 0;
+}
+.live_index .live_item li:nth-child(6){
+	border-width:0 0 0 0;
+}
+
+.live_item li img,.live_item li p{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+.live_item li p{
+	right:40px;
+	color:rgba(255,255,255,0.5);
+}
