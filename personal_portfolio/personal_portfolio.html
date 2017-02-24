@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="../../imooc/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    /* 为body设置一个padding-top，以避免固定在顶部的navbar会挡住home区的内容 */
+      body{
+        padding-top:50px;
+        min-width:400px;
+        background-color: #fbe8d3;
+      }
+      /* 导航条的样式 */
+      .navbar{
+        background-color: #F3726D;
+      }
+      .navbar-header .navbar-brand{
+        font-size:24px;
+      }
+      #navlist a,.btn{
+        font-weight:bold;
+      }
+      .navbar-header .navbar-brand,#navlist a{
+        color:#fff;
+      }
+      #navlist a{
+        -moz-transition:background 1s ease-in-out;
+        -webkit-transition:background 1s ease-in-out;
+        transition:background 1s ease-in-out;
+      }
+      #navlist .active a{
+        background: #EF4E4C;
+      }
+      #navlist a:hover{
+        background: #EF4E4C;
+      }
+      /* 内容区的样式 */
+      /* container-fluid有一个padding-left和padding-right，重新定义一个padding：0覆盖掉 */
+      .content{
+        padding:0;
+      }
+      h1,h2{
+        text-align: center;
+      }
+      h1{
+        letter-spacing: 2px;
+        margin-top: 200px;
+        font-size:50px;
+      }
+      h2{
+        color:#777;
+        font-size:35px;
+      }
+      /* 按钮的通用样式 */
+      .btn-default{
+        padding-left:20px;
+        padding-right: 20px;
+        background-color: #fbe8d3;
+        -moz-transition:background ease-in-out .5s,color ease-in-out .5s;
+        -webkit-transition:background ease-in-out .5s,color ease-in-out .5s;
+        transition:background ease-in-out .5s,color ease-in-out .5s;
+      }
+       .btn-default:hover{
+        background:#F3726D;
+        color:#fff;
+        box-shadow: 1px 1px   #F3726D,-1px -1px  #F3726D;
+        -webkit-box-shadow: 1px 1px   #F3726D,-1px -1px  #F3726D;
+        -moz-box-shadow: 1px 1px   #F3726D,-1px -1px #F3726D;
+      }
+      /* 设置分割线的样式和动画 */
+      hr{
+        border-top:0;
+        border-bottom:2px solid #E83C3C;
+        width:5%;
+        height:30px;
+        min-width:50px;
+        -moz-transition:width ease-in-out 1.5s;
+        -webkit-transition:width ease-in-out 1.5s;
+        transition:width ease-in-out 1.5s;
+      }
+      hr:hover{
+        width:65%;
+      }
+      /* home区的样式 */
+      #home{
+        background: url(header.jpg) no-repeat fixed;
+        overflow: hidden;
+        height:800px;
+        background-size: cover;
+      }
+      #home .row{
+        width:40%;
+        margin:0 auto;
+      }
+      #home .col-md-3{
+        text-align: center;
+        margin:10px 0;
+      }
+      /* about区的样式 */
+      #about{
+        position: relative;
+        height:800px;
+      }
+      /* 让about的内容垂直居中 */
+      #about .row{
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+      }
+      #about p{
+        font-size: 18px;
+      }
+      /* portfolio区的样式 */
+      #portfolio{
+        background-color: #f9ecdd;
+        height:auto;
+      }
+      #portfolio .row{
+        margin:50px 0;
+        text-align: center;
+      }
+      #portfolio .row .img-circle:hover{
+        box-shadow: 2px 2px 2px #888,-2px -2px 2px #888;
+        -moz-box-shadow: 2px 2px 2px #888,-2px -2px 2px #888;
+        -webkit-box-shadow: 2px 2px 2px #888,-2px -2px 2px #888;
+      }
+      /* contact区的样式 */
+      #contact .btn{
+        display: block;
+        margin:20px auto;
+      }
+      /* footer的样式 */
+      footer{
+        color:#fff;
+      }
+      footer .footer-top{
+        background:#928a97;
+        overflow: hidden;
+        border-top:3px solid #F3726D;
+      }
+      .footer-top h3{
+        background-color: #F3726D;
+        display: inline-block;
+        padding:10px 20px;
+        margin:0 10%;
+      }
+      .footer-top p{
+        font-size: 20px;
+        font-weight: bold;
+        margin-left:15%;
+      }
+      footer .footer-bottom{
+        background-color: #283c63;
+        text-align: center;
+        overflow: hidden;
+        height:40px;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+  <body data-spy="scroll" data-target="#navlist">
+  <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#navlist">
+            <span class="sr-only">toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">MH Site</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right" id="navlist">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav><!-- navbar结束 -->
+    <!-- main-content -->
+    <div class="container-fluid content">
+      <!-- home区 -->
+      <section id="home">
+        <h1>Ming Web Design Studio</h1>
+        <h2><span>H</span>ealth,<span>H</span>appy,<span>H</span>ardworking</h2>
+        <hr />
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <button class="btn btn-default">Twitter</button>
+          </div> 
+          <div class="col-md-3 col-sm-6">
+            <button class="btn btn-default">Github</button>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <button class="btn btn-default">Linkedin</button>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <button class="btn btn-default">freeCodeCamp</button>
+          </div>
+        </div>
+      </section><!-- home区结束 -->
+      <!-- about区 -->
+      <section id="about">
+        <div class="row">
+          <div class="col-md-3 col-md-offset-2 col-xs-4">
+            <img src="intro1.jpg" alt="introduction" class="img-circle img-responsive"/>
+          </div>
+          <div class="col-md-4 col-md-offset-1 col-xs-8">
+            <h2>MH Web Design Studio</h2>
+            <p>I'm a self taught web designer, developer, co-founder and entrepreneur based in Finland.I'm currently part of a small web development team in an upcoming start-up, building web and mobile applications.My passion is to use technology based solutions, to help solve real world challenges.</p>
+            <p>Competences:<br />
+            Languages and Frameworks:<br />
+            Javascript, HTML5, CSS3, jQuery, Bootstrap3, Angular.js, Meteor.js.<br />
+            Tools and expertise:<br />
+            Git, Responsive Web Design, Agile Methodologies. </p>
+          </div>
+        </div>
+      </section><!-- about区结束 -->
+      <!-- portfolio区 -->
+      <section id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <img src="1.png" alt=""  class="img-circle"/>
+            </div>
+            <div class="col-md-4">
+              <img src="2.jpg" alt=""  class="img-circle"/>
+            </div>
+            <div class="col-md-4">
+              <img src="3.png" alt=""  class="img-circle"/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="4.jpg" alt=""  class="img-circle"/>
+            </div>
+            <div class="col-md-4">
+              <img src="5.jpg" alt=""  class="img-circle"/>
+            </div>
+            <div class="col-md-4">
+              <img src="6.png" alt=""  class="img-circle"/>
+            </div>
+          </div>
+        </div>
+      </section><!-- portfolio区结束 -->
+      <!-- contact区 -->
+      <section id="contact">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-2">
+            <h1>Contact With Me</h1>
+            <button class="btn btn-default">Twitter</button>
+            <button class="btn btn-default">Github</button>
+            <button class="btn btn-default">Linkedin</button>
+            <button class="btn btn-default">freeCodeCamp</button>
+          </div>
+          <div class="col-md-5 col-md-offset-1">
+            <img src="contact.png" alt="" class="img-responsive">
+          </div>
+        </div>
+      </section><!-- contact区结束 -->
+    </div><!-- main-content结束 -->
+    <!-- footer -->
+    <footer>
+      <div class="footer-top">
+        <h3>MH Site</h3>
+        <p>Miki's original site.<br />
+          Keep Fighting!</p>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright©MH Web Designer Studio 2016.All Rights Reserved</p>
+      </div>
+    </footer><!-- footer结束 -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../../imooc/bootstrap/jquery-3.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../imooc/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
